@@ -1,5 +1,5 @@
 import { RotateLoader } from "react-spinners";
-import { LoadingBox } from "./Loading-Screen";
+import { LoadingBox } from "./styles";
 
 export const LoadingScreen = () => {
   return (

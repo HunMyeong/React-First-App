@@ -40,6 +40,7 @@ export const Input = styled.input`
     &:hover {
       opacity: 0.8;
     }
+    margin-bottom: 40px;
   }
 `;
 
@@ -62,7 +63,7 @@ export const GoogleBtn = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 85%;
   border: 1px solid black;
   background-color: white;
@@ -76,4 +77,11 @@ export const GoogleBtn = styled.span`
 export const GoogleLogo = styled.img`
   height: 30px;
   margin-right: 15px;
+`;
+
+export const Toggle = styled.span`
+  margin-top: 18px;
+  a {
+    color: blueviolet;
+  }
 `;

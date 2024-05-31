@@ -1,13 +1,6 @@
-import styled from "styled-components";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-
-export const HeaderDiv = styled.div``;
-
-export const LogOutBtn = styled.button`
-  width: 50px;
-  font-size: 16px;
-`;
+import { HeaderDiv, LogOutBtn } from "./Styles";
 
 export const Header = () => {
   const navigate = useNavigate();

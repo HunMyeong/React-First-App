@@ -8,9 +8,10 @@ import {
   Input,
   RightBox,
   Title,
+  Toggle,
   Wrapper,
 } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -79,16 +80,17 @@ export const SignUp = () => {
     }
   };
 
-  const googleClick = async () => {
+  const googleClick = async (select: string) => {
     try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      if (select === "google") {
+        const provider = new GoogleAuthProvider();
+        await signInWithPopup(auth, provider);
+      }
       navigate("/");
     } catch (e) {
       console.log(e);
     }
   };
-
   return (
     <Wrapper>
       <ImgPhoto src="/images/0.jpg" alt="사진"></ImgPhoto>
@@ -122,10 +124,13 @@ export const SignUp = () => {
           <Input type="submit" value={isLoading ? "로딩중" : "회원가입"} />
         </Form>
         {error === "" ? null : <Error>{error}</Error>}
-        <GoogleBtn onClick={googleClick}>
+        <GoogleBtn onClick={() => googleClick("google")}>
           <GoogleLogo src="/images/google.svg" />
-          구글로 가입하기
+          구글 가입하기
         </GoogleBtn>
+        <Toggle>
+          이미 가입했다면? <Link to={"/"}>로그인</Link>하기
+        </Toggle>
       </RightBox>
     </Wrapper>
   );

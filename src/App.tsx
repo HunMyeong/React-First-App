@@ -34,6 +34,7 @@ function App() {
   useEffect(() => {
     setTimeout(init, 2000);
   }, []);
+
   return (
     <Wrapper>
       <GlobalStyle />
